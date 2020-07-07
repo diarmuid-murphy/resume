@@ -30,12 +30,16 @@ h3 {
   /* margin: 20px 20px; */
 }
 
+.address {
+  text-align: right;
+}
+
 ul li {
   font-size: 0.9em;
 }
 
 address {
-  padding: 50px 20px;
+  padding: 50px 20px 15px;
 }
 
 .pull-right {
@@ -44,4 +48,23 @@ address {
 
 .container {
   margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .logo, .address {
+    text-align: center;
+  }
+
+  .address {
+    min-height: 290px;
+  }
+
+  address {
+    padding: 10px;
+  }
+
+  .pull-right {
+    float: none;
+    display: absolute;
+  }
 }

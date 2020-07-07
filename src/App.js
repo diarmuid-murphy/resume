@@ -18,10 +18,10 @@ class App extends React.Component {
       city: '***********',
 			state: data.address.state,
       stateShort: data.address.stateShort,
-      phone: '(123) 456-7891',
-      linkedIn: 'https://www.linkedin.com/in/myprofile/',
-      github: 'http://www.github.com/my-username/',
-      email: 'first.last@mail.com',
+      phone: '(***) ***-1258',
+      linkedIn: 'https://www.linkedin.com/in/**********/',
+      github: 'http://www.github.com/********-******/',
+      email: '********.***@*****.com',
       name: 'D******* M*****'
     },
     skillsAndAbilities: data.skillsAndAbilities,
@@ -48,6 +48,12 @@ class App extends React.Component {
     this.initialState.experience = hiddenCompanies;
 
     this.setState(this.initialState);
+  }
+
+  componentDidMount() {
+    const today = new Date();
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    document.title = `${data.address.name} Resume - ${months[today.getMonth()]} ${today.getFullYear()}`;
   }
 
   resetState = () => this.setState(this.initialState);
