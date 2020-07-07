@@ -7,7 +7,7 @@ function Education(props) {
 				<h2>Education</h2>
 				<ul>
 					{props.education.map((degree) => (
-						<li>{degree.degree} - <a href={degree.website}>{degree.school}</a></li>
+						<li key={degree.degree}>{degree.degree} - <a href={degree.website}>{degree.school}</a></li>
 					))}
 				</ul>
 			</div>

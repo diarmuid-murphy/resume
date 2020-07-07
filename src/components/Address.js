@@ -13,7 +13,7 @@ function Address(props) {
 			<h1 className="text-left">
 				{props.address.name + ' '}
 
-				{!props.isRendered ? <button className="btn btn-primary" onClick={props.reveal}>Click here to reveal</button> : null}
+				{!props.isRendered ? <button className="btn btn-primary btn-sm" onClick={props.reveal}>Reveal private details for 1 minute</button> : null}
 			</h1>
 		</address>
 	);

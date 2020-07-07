@@ -14,7 +14,7 @@ function SkillsAndAbilities(props) {
 							<li>Other tools - {props.skillsAndAbilities.other.join(', ')}</li>
 						</ul>
 					</li>
-					{props.skillsAndAbilities.other.map((item) => <li>{item}</li>)}
+					{props.skillsAndAbilities.other.map((item) => <li key={item}>{item}</li>)}
 				</ul>
 			</div>
 		</div>
