@@ -10,7 +10,11 @@ function Address(props) {
 				<a href={props.address.github} target="_blank">{props.address.github}</a><br />
 				<a href={props.address.email} target="_blank">{props.address.email}</a>
 			</p>
-			<h1 className="text-left">{props.address.name}</h1>
+			<h1 className="text-left">
+				{props.address.name + ' '}
+
+				{!props.isRendered ? <button className="btn btn-primary" onClick={props.reveal}>Click here to reveal</button> : null}
+			</h1>
 		</address>
 	);
 }
