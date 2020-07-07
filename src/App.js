@@ -19,7 +19,7 @@ class App extends React.Component {
 			state: data.address.state,
       stateShort: data.address.stateShort,
       phone: '(***) ***-1258',
-      linkedIn: 'https://www.linkedin.com/in/**********/',
+      linkedIn: 'https://www.linkedin.com/in/**************/',
       github: 'http://www.github.com/********-******/',
       email: '********.***@*****.com',
       name: 'D******* M*****'
@@ -72,7 +72,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Header>
+        <Header
+          isRendered={this.state.isRendered}
+          name={this.state.address.name}
+        >
           <Address
             address={this.state.address}
             reveal={this.reveal}
