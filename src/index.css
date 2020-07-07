@@ -55,6 +55,10 @@ address {
     text-align: center;
   }
 
+  .logo img {
+    max-height: 200px;
+  }
+
   .address {
     min-height: 290px;
   }

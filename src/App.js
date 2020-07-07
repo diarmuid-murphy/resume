@@ -66,7 +66,7 @@ class App extends React.Component {
       certifications: data.certifications
     });
 
-    setTimeout(this.resetState, 60 * 1000);
+    setTimeout(this.resetState, 3 * 60 * 1000);
   };
 
   render() {
