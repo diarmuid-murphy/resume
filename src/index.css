@@ -6,3 +6,42 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'IBM Plex Mono', monospace;
 }
+
+h2 {
+  border-bottom: solid var(--primary) 2px;
+  padding-bottom: 10px; 
+}
+
+h2.tagline {
+  border-bottom: none;
+  padding-bottom: initial;
+  font-size: 1em;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.logo img {
+  /* width: 100%; */
+  max-height: 300px;
+  /* margin: 20px 20px; */
+}
+
+ul li {
+  font-size: 0.9em;
+}
+
+address {
+  padding: 50px 20px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.container {
+  margin-bottom: 80px;
+}

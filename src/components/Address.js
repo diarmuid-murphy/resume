@@ -3,18 +3,18 @@ import React from 'react';
 function Address(props) {
 	return (
 		<address>
+			<h1>{props.address.name}</h1>
+			<h2 className="tagline"><em>Fullstack Javascript Web Developer</em></h2>
+
 			<p>
-				{props.address.city}, {props.address.stateShort}<br />
+				<em>{props.address.city}, {props.address.stateShort}</em><br />
 				<a href={'tel:' + props.address.phone} target="_blank" rel="noopener noreferrer">{props.address.phone}</a><br />
 				<a href={props.address.linkedIn} target="_blank" rel="noopener noreferrer">{props.address.linkedIn}</a><br />
 				<a href={props.address.github} target="_blank" rel="noopener noreferrer">{props.address.github}</a><br />
-				<a href={props.address.email} target="_blank" rel="noopener noreferrer">{props.address.email}</a>
+				<a href={'mailto:' + props.address.email} target="_blank" rel="noopener noreferrer">{props.address.email}</a>
 			</p>
-			<h1 className="text-left">
-				{props.address.name + ' '}
-
-				{!props.isRendered ? <button className="btn btn-primary btn-sm" onClick={props.reveal}>Reveal private details for 1 minute</button> : null}
-			</h1>
+			
+			{!props.isRendered ? <button className="btn btn-primary btn-sm pull-right" onClick={props.reveal}>Reveal private details for 1 minute</button> : null}
 		</address>
 	);
 }

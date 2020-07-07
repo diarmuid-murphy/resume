@@ -21,7 +21,7 @@ class App extends React.Component {
       phone: '(123) 456-7891',
       linkedIn: 'https://www.linkedin.com/in/myprofile/',
       github: 'http://www.github.com/my-username/',
-      email: 'hidden@mail.com',
+      email: 'first.last@mail.com',
       name: 'D******* M*****'
     },
     skillsAndAbilities: data.skillsAndAbilities,
@@ -65,7 +65,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <Header>
           <Address
             address={this.state.address}
@@ -73,7 +73,6 @@ class App extends React.Component {
             isRendered={this.state.isRendered}
           />
         </Header>
-
         <SkillsAndAbilities skillsAndAbilities={this.state.skillsAndAbilities} />
         <Experience experience={this.state.experience} />
         <Education education={this.state.education} />
