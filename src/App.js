@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import data from './data.json';
 
 import Header from './components/Header';
 import SkillsAndAbilities from './components/SkillsAndAbilities';
 import Experience from './components/Experience';
+import Education from './components/Education'
 
 import './App.css';
 import Address from './components/Address';
@@ -22,7 +23,8 @@ class App extends React.Component {
       email: 'hidden@mail.com',
       name: 'D******* M*****'
     },
-    skillsAndAbilities: data.skillsAndAbilities
+    skillsAndAbilities: data.skillsAndAbilities,
+    education: data.education
   }
 
   componentWillMount() {
@@ -62,8 +64,10 @@ class App extends React.Component {
 
         <SkillsAndAbilities skillsAndAbilities={this.state.skillsAndAbilities} />
         <Experience experience={this.state.experience} />
-        {/* <Education />
-        <Certifications />
+        <Education education={this.state.education} />
+        
+
+        {/* <Certifications />
         <Footer /> */}
       </div>
     );

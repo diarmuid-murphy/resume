@@ -7,7 +7,7 @@ function Experience(props) {
 				<h2>Experience</h2>
 				{props.experience.map((job) => (
 					<>
-					<h3>{job.role}, <a href={job.website} target="_blank">{job.company}</a></h3>
+					<h3>{job.role} @ <a href={job.website} target="_blank" rel="noopener noreferrer">{job.company}</a></h3>
 					
 					<p><em>{job.years}</em></p>
 
