@@ -16,7 +16,7 @@ function Address(props) {
 			
 			{!props.isRendered ?
 				<button className="btn btn-primary btn-sm pull-right" onClick={props.reveal}>Reveal private details for 3 minutes</button> :
-				<span className="pull-right text-secondary">Private details will remain visible for {props.timeLeft} mins.</span>}
+				<span className="pull-right text-secondary">Private details will remain visible for: {props.timeLeft}</span>}
 		</address>
 	);
 }

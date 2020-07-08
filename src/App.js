@@ -78,16 +78,16 @@ class App extends React.Component {
       secondsLeft < 10 ? secondsLeft = '0' + secondsLeft : secondsLeft = secondsLeft + 0;
 
       if (minsLeft === 0 && secondsLeft === '00') {
-        clearInterval(privateInformationCountdown);
-
         this.setState({
           timeLeft: '3:00'
         });
-      }
 
-      this.setState({
-        timeLeft: `${minsLeft}:${secondsLeft}`
-      });
+        clearInterval(privateInformationCountdown);
+      } else {
+        this.setState({
+          timeLeft: `${minsLeft}:${secondsLeft}`
+        });
+      }
     }, 1000);
 
     setTimeout(this.resetState, timeVisible);
