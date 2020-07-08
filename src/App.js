@@ -54,12 +54,6 @@ class App extends React.Component {
     const today = new Date();
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     document.title = `${data.address.name} Resume - ${months[today.getMonth()]} ${today.getFullYear()}`;
-
-    // remove this
-    // console.log(btoa(JSON.stringify(data)));
-    console.log(data);
-    console.log(data);
-  // END test code
   }
 
   resetState = () => this.setState(this.initialState);
