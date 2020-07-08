@@ -15,16 +15,16 @@ class App extends React.Component {
     isRendered: false,
 		address: {
       city: '***********',
-			state: JSON.parse(atob(data)).address.state,
-      stateShort: JSON.parse(atob(data)).address.stateShort,
+			state: data.address.state,
+      stateShort: data.address.stateShort,
       phone: '(***) ***-1258',
       linkedIn: 'https://www.linkedin.com/in/**************/',
       github: 'http://www.github.com/********-******/',
       email: '********.***@*****.com',
       name: 'D******* M*****'
     },
-    skillsAndAbilities: JSON.parse(atob(data)).skillsAndAbilities,
-    education: JSON.parse(atob(data)).education,
+    skillsAndAbilities: data.skillsAndAbilities,
+    education: data.education,
     certifications: [
       { "name": "Front End Web Development" },
       { "name": "Google Online Marketing Qualification" },
@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    const hiddenCompanies = JSON.parse(atob(data)).experience.map((job) => {
+    const hiddenCompanies = data.experience.map((job) => {
       return {
         role: job.role,
         company: '**********',
@@ -53,12 +53,12 @@ class App extends React.Component {
   componentDidMount() {
     const today = new Date();
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    document.title = `${JSON.parse(atob(data)).address.name} Resume - ${months[today.getMonth()]} ${today.getFullYear()}`;
+    document.title = `${data.address.name} Resume - ${months[today.getMonth()]} ${today.getFullYear()}`;
 
     // remove this
     // console.log(btoa(JSON.stringify(data)));
     console.log(data);
-    console.log(JSON.parse(atob(data)));
+    console.log(data);
   // END test code
   }
 
@@ -67,16 +67,16 @@ class App extends React.Component {
   reveal = () => {
     this.setState({
       isRendered: true,
-      address: JSON.parse(atob(data)).address,
-      experience: JSON.parse(atob(data)).experience,
-      certifications: JSON.parse(atob(data)).certifications
+      address: data.address,
+      experience: data.experience,
+      certifications: data.certifications
     });
 
     // 3 mins * 60 seconds * 1000 milliseconds
     const timeVisible = 3 * 60 * 1000;
     let timeLeft = timeVisible;
 
-    const myInterval = setInterval(() => {
+    const privateInformationCountdown = setInterval(() => {
       timeLeft = timeLeft - 1000;
       let minsLeft = Math.floor((timeLeft / 1000) / 60);
       let secondsLeft = (timeLeft / 1000) % 60;
@@ -84,7 +84,7 @@ class App extends React.Component {
       secondsLeft < 10 ? secondsLeft = '0' + secondsLeft : secondsLeft = secondsLeft + 0;
 
       if (minsLeft === 0 && secondsLeft === '00') {
-        clearInterval(myInterval);
+        clearInterval(privateInformationCountdown);
 
         this.setState({
           timeLeft: '3:00'
